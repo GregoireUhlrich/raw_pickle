@@ -1,5 +1,13 @@
-project("raw_pickle")
+project(raw_pickle CXX)
 
 cmake_minimum_required(VERSION 3.16)
 
-add_subdirectory("raw_pickle")
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+
+add_executable(main main.cpp)
+target_link_libraries(main raw_pickle)
+
+
+add_subdirectory(raw_pickle)
